@@ -1,0 +1,16 @@
+# Python
+app/.venv/
+app/__pycache__/
+app/**/__pycache__/
+app/.pytest_cache/
+*.pyc
+
+# Node / Playwright
+automation/node_modules/
+automation/test-results/
+automation/playwright-report/
+automation/.cache/
+
+# Env files
+.env
+*.env.local

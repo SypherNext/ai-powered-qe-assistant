@@ -1,0 +1,16 @@
+{
+  "name": "ai-powered-qe-assistant-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright TypeScript automation for Vespera Helpdesk's SLA Auto-Escalation requirement -- reference code from the AI for Quality Engineering course's first half.",
+  "scripts": {
+    "test": "playwright test",
+    "check-secrets": "node scripts/check-no-hardcoded-secrets.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "typescript": "^5.6.0"
+  }
+}

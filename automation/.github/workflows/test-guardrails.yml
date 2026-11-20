@@ -1,0 +1,18 @@
+name: Test Guardrails
+
+on:
+  pull_request:
+    paths:
+      - "tests/**"
+
+jobs:
+  secret-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan changed test files for hardcoded secrets
+        run: |
+          CHANGED_FILES=$(git diff --name-only origin/main...HEAD -- 'tests/**')
+          if [ -n "$CHANGED_FILES" ]; then
+            node scripts/check-no-hardcoded-secrets.js $CHANGED_FILES
+          fi
